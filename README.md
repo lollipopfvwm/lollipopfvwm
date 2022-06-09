@@ -11,6 +11,8 @@
 	<br clear="right"/>
 </p>
 <h1>Configuration highlights</h1>
-<p align="left">
-<strong>Color scheme.</strong>
+<p align="left"><strong>Color scheme.</strong></p>
+<p>
+This configuration contains its own color scheme, called LolliPop.
+This color scheme is applied in several applications, such as kitty and alacritty terminals, tmux, gtk theme, neovim text editor and Fvwm itself.
 </p>
