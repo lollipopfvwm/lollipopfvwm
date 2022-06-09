@@ -23,5 +23,6 @@ This color scheme is applied in several applications, such as kitty and alacritt
 	<p>
 	In this image we have the <strong>kitty</strong> and <strong>alacritty</strong> terminals using the LolliPop Dark theme
 	They also have a clear theme, and some others are being developed, with care and time, so that they are always fluid and pleasing to the eye.
+	For more topics and news, visit <link src="https://github.com/lollipopfvwm/gallery">
 	</p>
 	<br clear="left"/>
