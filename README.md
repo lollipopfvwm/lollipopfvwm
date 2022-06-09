@@ -10,7 +10,7 @@
 	<p>Below are some of the things that are being done for this configuration.</p>
 	<br clear="right"/>
 </p>
-<h1 style="color: purple">Configuration highlights</h1>
+<h1>Configuration highlights</h1>
 <p align="left">
-
+<strong>Color scheme.</strong>
 </p>
