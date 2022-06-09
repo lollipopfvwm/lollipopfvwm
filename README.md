@@ -7,5 +7,6 @@
 	<p>
 	This configuration is basically done in shell script, making use of variables to modify almost all Fvwm features. Just read the comments of each variable to know what will happen, all very simple and easy to understand.
 	</p>
+	<p>Below are some of the things that are being done for this configuration.</p>
 	<br clear="right"/>
 </p>
