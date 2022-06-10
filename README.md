@@ -21,8 +21,7 @@ This theme is also applied in other applications, such as the neovim text editor
 	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/terminais.png"
 	align="left" width="400"/>
 	<p>
-	In this image we have the <strong>kitty</strong> and <strong>alacritty</strong> terminals using the LolliPop Dark theme
-	They also have a clear theme, and some others are being developed, with care and time, so that they are always fluid and pleasing to the eye.
+	All the colors were passed to be fluent and pleasing to the eye, to be soft regardless of being light or dark, in the end a good color scheme is part of a good rice.
 	<p>For more topics and news <a href="https://github.com/lollipopfvwm/gallery">visit the image gallery</a></p>
 	</p>
 	<br clear="left"/>
