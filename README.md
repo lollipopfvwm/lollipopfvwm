@@ -13,8 +13,8 @@
 <h1>Configuration highlights</h1>
 <p align="left"><strong>Color scheme.</strong></p>
 <p>
-This configuration contains its own color scheme, called LolliPop.
-This color scheme is applied in several applications, such as kitty and alacritty terminals, tmux, gtk theme, neovim text editor and Fvwm itself.
+Here we have the kitty terminal, using the light and dark LolliPop themes.
+This theme is also applied in other applications, such as the neovim text editor, the alacritty terminal, tmux, gtk theme, icon theme and in Fvwm of course.
 </p>
 
 <p align="center">
