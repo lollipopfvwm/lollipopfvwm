@@ -28,7 +28,7 @@ This theme is also applied in other applications, such as the neovim text editor
 	<h1>Workspace</h1>
 	<p align="center">
 	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/desktop.png"
-	align="right" width="300"/>
+	align="right" width="500"/>
 	<p>
 	This customization has a very simple and useful workspace, containing a bar at the top, an underwater dock and a clock on the right.
 	</p>
