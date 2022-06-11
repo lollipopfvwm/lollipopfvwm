@@ -25,7 +25,7 @@ This theme is also applied in other applications, such as the neovim text editor
 	<p>For more topics and news <a href="https://github.com/lollipopfvwm/gallery">visit the image gallery</a></p>
 	</p>
 	<br clear="left"/>
-	<h1>Workspace</p>
+	<h1>Workspace</h1>
 	<p align="center">
 	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/desktop.png"
 	align="right" width="300"/>
