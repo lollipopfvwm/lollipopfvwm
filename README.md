@@ -11,7 +11,7 @@
 	<br clear="right"/>
 </p>
 <h1>Configuration highlights</h1>
-<p align="left"><strong>Color scheme.</strong></p>
+<p align="left"></p>
 <p>
 Here we have the kitty terminal, using the light and dark LolliPop themes.
 This theme is also applied in other applications, such as the neovim text editor, the alacritty terminal, tmux, gtk theme, icon theme and in Fvwm of course.
@@ -20,6 +20,7 @@ This theme is also applied in other applications, such as the neovim text editor
 <p align="center">
 	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/terminais.png"
 	align="left" width="400"/>
+	<h1>Color scheme</h1>
 	<p>
 	All the colors were passed to be fluent and pleasing to the eye, to be soft regardless of being light or dark, in the end a good color scheme is part of a good rice.
 	<p>For more topics and news <a href="https://github.com/lollipopfvwm/gallery">visit the image gallery</a></p>
