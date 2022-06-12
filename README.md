@@ -34,7 +34,6 @@
 🡲	Wallpapers
 
 <h1>Used programs</h1>
-<div align="center">
 | Name  | Description |
 | ------------- | ------------- |
 | kitty  | terminal  |
@@ -43,8 +42,9 @@
 | nemo  | file manager  |
 | neovim  | cli editor  |
 | sublime  | text editor  |
-| lxaappearance  | forr themes  |
-</div>
+| lxaappearance  | for themes  |
+| zsh  | shell  |
+
 
 <h1>Configuration highlights</h1>
 <p align="left"></p>
