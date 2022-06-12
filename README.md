@@ -21,15 +21,15 @@
 </li>
 🡲 	To generate thumbnails when minimizing
 <li>
-picom-ibhagwan-git
+<strong>picom-ibhagwan-git</strong>
 </li>
 🡲	For rounded edges and blur
 <li>
-rofi
+<strong>rofi</strong>
 </li>
 🡲	Menu
 <li>
-nitrogen
+<strong>nitrogen</strong>
 </li>
 🡲	Wallpapers
 
