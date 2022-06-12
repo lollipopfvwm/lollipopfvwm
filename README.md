@@ -15,9 +15,11 @@
 <h1>Dependencies</h1>
 <p>
  🡲 <strong>xorg-xwd</strong>
- 🡲 <strong>imagemagic</strong>
- 	To generate thumbnails when minimizing		
 </p>
+<p>
+ 🡲 <strong>imagemagic</strong>
+</p>
+ 	To generate thumbnails when minimizing
 
 <h1>Configuration highlights</h1>
 <p align="left"></p>
