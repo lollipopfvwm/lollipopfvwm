@@ -69,5 +69,15 @@ And finally</p>
 <h2>A little about settings.sh</h2>
 <p align="center">
 	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/settings-apps-.png">
+	<p>
+	Note how simple the configuration is.
+	Just change the variables, always reading the comments of each block.
+	</p>
+	<p>
+	Assuming your favorite terminal is something other than kitty, just replace "kitty" with your favorite terminal.
+	</p>
+	<p>
+	This applies to all programs in this block.
+	</p>
 	<br clear="right"/>
 </p>
