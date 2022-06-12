@@ -13,7 +13,11 @@
 </p>
 
 <h1>Dependencies</h1>
-- **Window Manager** :bento: [Openbox](http://openbox.org/wiki/Main_Page) dual themes!
+<p>
+ 🡲 <strong>xorg-xwd</strong>
+ 🡲 <strong>imagemagic</strong>
+ 	To generate thumbnails when minimizing		
+</p>
 
 <h1>Configuration highlights</h1>
 <p align="left"></p>
