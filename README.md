@@ -86,7 +86,7 @@ And finally</p>
 </p>
 <h1>Menu</h1>
 <p align="center">
-	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/rofi.png" align="left" width="700"/>
+	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/rofi.png" align="left" width="500"/>
 	<p>
 	This configuration brings up a custom menu, using rofi.
 	</p>
