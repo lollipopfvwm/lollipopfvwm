@@ -43,6 +43,11 @@
 </tr>
 </table>
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 <h1>Configuration highlights</h1>
 <p align="left"></p>
 <p>
