@@ -34,6 +34,7 @@
 🡲	Wallpapers
 
 <h1>Used programs</h1>
+
 | Name  | Description |
 | ------------- | ------------- |
 | kitty  | terminal  |
