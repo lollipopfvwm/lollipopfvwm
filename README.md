@@ -84,4 +84,20 @@ And finally</p>
 	</p>
 	<br clear="right"/>
 </p>
-
+<h1>Menu</h1>
+<p align="center">
+	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/rofi.png" align="left" width="700"/>
+	<p>
+	This configuration brings up a custom menu, using rofi.
+	</p>
+	<p>
+	It can be activated using the Super+m keys, or by clicking the menu button on the top bar.
+	</p>
+	<p>
+	It has two color options, light and dark, to accompany the Fvwm theme. These colors automatically change when clicking on the theme icon in the top bar.
+	</p>
+	<p>
+	<p>Nesta imagem o tema de icones é <a href="https://github.com/zayronxio/Zafiro-icons">Zafiro</a></p>
+	</p>
+	<br clear="right"/>
+</p>
