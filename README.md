@@ -83,7 +83,7 @@ And finally</p>
 	</p>
 	<br clear="right"/>
 </p>
-~~~shell
+```shell
 #!/bin/bash
 echo "oi"
-~~~
+```
