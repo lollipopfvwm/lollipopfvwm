@@ -1,9 +1,3 @@
-<style>
-	h1 {
-		color: #F12345;
-	}
-</style>
-
 <div align="justify">
 <p align="center">
 	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/LolliPop.png"
@@ -42,7 +36,8 @@
 <h1>Used programs</h1>
 <table align="left">
 <tr align="center">
-	<li><strong>kitty </strong> Terminal</li>
+	<li><strong>kitty </strong></li> 
+	<sub>Terminal</sub>
 </tr>
 </table>
 
