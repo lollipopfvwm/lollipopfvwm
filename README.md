@@ -80,10 +80,8 @@ And finally</p>
 	This applies to all programs in this block.
 	</p>
 	<p>
+	<p>check the file <a href="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/fvwm/settings.sh">here</a></p>
 	</p>
 	<br clear="right"/>
 </p>
-```shell
-#!/bin/bash
-echo "oi"
-```
+
