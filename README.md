@@ -36,8 +36,10 @@
 <h1>Used programs</h1>
 <table align="left">
 <tr align="center">
+<tr>
 	<li><strong>kitty </strong></li> 
 	<sub>Terminal</sub>
+</tr>
 </tr>
 </table>
 
