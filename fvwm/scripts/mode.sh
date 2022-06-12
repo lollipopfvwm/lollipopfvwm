@@ -8,14 +8,14 @@ if [[ $CurrentMode == Dark ]]; then
 	sed -i 's/Theme="Dark"/Theme="Light"/g' ~/.fvwm/settings.sh
 	echo '@import url("light.css");' > ~/.themes/Four/gtk-3.0/colors.css
 	cat ~/.config/kitty/light > ~/.config/kitty/kitty.conf
-	echo '@import "midnight-light.rasi"' > $rofi_dir
+	echo '@import "light.rasi"' > $rofi_dir
 	xsettingsd &
 	killall xsettingsd
 else
 	sed -i 's/Theme="Light"/Theme="Dark"/g' ~/.fvwm/settings.sh
 	echo '@import url("dark.css");' > ~/.themes/Four/gtk-3.0/colors.css
 	cat ~/.config/kitty/dark > ~/.config/kitty/kitty.conf
-	echo '@import "midnight.rasi"' > $rofi_dir
+	echo '@import "dark.rasi"' > $rofi_dir
 	xsettingsd &
 	killall xsettingsd
 fi
