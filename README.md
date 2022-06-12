@@ -13,25 +13,13 @@
 </p>
 
 <h1>Dependencies</h1>
-<li>
-<strong>xorg-xwd</strong>
-</li>
-<li>
-<strong>imagemagick</strong>
-</li>
-🡲 	To generate thumbnails when minimizing
-<li>
-<strong>picom-ibhagwan-git</strong>
-</li>
-🡲	For rounded edges and blur
-<li>
-<strong>rofi</strong>
-</li>
-🡲	Menu
-<li>
-<strong>nitrogen</strong>
-</li>
-🡲	Wallpapers
+
+| Name | Description | Install |
+| ------------- | ------------- | ------------- |
+| xorg-xwd | thumbnails | sudo pacman -S xorg-xwd |
+| imagemagick | thumbnails | sudo pacman -S imagemagick |
+| picom | rounded edges and blur | yay - S picom-ibhagwan-git |
+
 
 <h1>Used programs</h1>
 
