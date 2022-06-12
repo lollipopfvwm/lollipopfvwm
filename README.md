@@ -20,6 +20,18 @@
 <strong>imagemagic</strong>
 </li>
 🡲 	To generate thumbnails when minimizing
+<li>
+picom-ibhagwan-git
+</li>
+🡲	For rounded edges and blur
+<li>
+rofi
+</li>
+🡲	Menu
+<li>
+nitrogen
+</li>
+🡲	Wallpapers
 
 <h1>Configuration highlights</h1>
 <p align="left"></p>
