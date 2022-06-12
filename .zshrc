@@ -48,11 +48,10 @@ function delete(){
 }
 
 # Source plugins
-#source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Functions
 source ~/.config/zsh/functions.sh
-source ~/.config/zsh/plug/web.zsh
 # Sourse prompt themes
 source ~/.config/zsh/themes.zsh
 # Use aliases
