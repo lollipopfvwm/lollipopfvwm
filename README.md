@@ -48,3 +48,4 @@ This theme is also applied in other applications, such as the neovim text editor
 	</p>
 	<br clear="right"/>
 </p>
+<h1>Simplified setup</h1>
