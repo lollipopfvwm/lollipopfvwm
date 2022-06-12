@@ -1,3 +1,9 @@
+<style>
+	h1 {
+		color: #F12345;
+	}
+</style>
+
 <div align="justify">
 <p align="center">
 	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/LolliPop.png"
