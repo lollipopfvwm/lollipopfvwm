@@ -1,0 +1,96 @@
+configuration {
+  modi:                 "drun";
+  show-icons:           true;
+  font:                 "monospace 11";
+  display-drun:         "";
+  drun-display-format:  "{name}";
+  sidebar-mode:         false;
+}
+
+@theme "/dev/null"
+
+* {
+  bg:       #0f1015;
+  bg-alt:   #f5f5f533;
+  conteiner:#FFFFFF11;
+  txt:      #f6f1f1;
+  background-color:   transparent; 
+  text-color:     @txt;
+}
+
+window {
+  background-color: @bg;
+  transparency:     "real";
+  width:            57%;
+  height:           88%; 
+  location:         0;
+  y-offset:         8;
+  x-offset:         0; 
+  padding:          0px;
+}
+
+prompt { enabled: false; }
+
+entry {
+  background-color: @bg-alt;
+  color: @txt;
+  placeholder:                    "   search...";
+  placeholder-color:              @txt;
+  expand:                         true;
+  padding:                        1.5%;
+  border-radius:      10px;
+  border: 2px;
+  border-color: @bg;
+  margin: 0px 0px 0px 300px;
+  padding: 10px;
+}
+
+inputbar {
+  children:                       [ prompt, entry ];
+  background-image:               url("assets/bg.jpg", width);
+  background-color: transparent;
+  padding:                        80px 40px;
+}
+
+listview {
+  columns:                        4;
+  lines:                          4;
+  cycle:                          false;
+  dynamic:                        true;
+  layout:                         vertical;
+  padding:      0px;
+  margin: 50;
+}
+
+mainbox { 
+  children: [ inputbar, listview ];
+  spacing:            0%;
+  padding:            0%;
+}
+
+element-icon {
+  background-color: transparent;
+  size:               80px;
+  horizontal-align:   0.5;
+  vertical-align:     0.5;
+}
+
+element {
+  background-color: transparent;
+  orientation: vertical;
+  padding: 10;
+  border-radius: 8px;
+}
+
+element-text {
+  horizontal-align: 0.5;
+  expand: true;
+  background-color: transparent;
+  text-color: @txt;
+}
+
+element selected {
+  background-color: @bg-alt;
+  border-radius: 0px;
+  text-color: @txt;
+}
