@@ -66,3 +66,8 @@ In this way the settings were divided into 4 files.
 And finally</p>
 <p>=> <strong>widgets.sh</strong> - contains the top bar, and may contain other widgets that need interaction with shell commands or scripts. This can also be changed by the user, as long as he knows what he is doing.</p>
 </p>
+<h2>A little about settings.sh</h2>
+<p align="center">
+	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/settings-apps-.png">
+	<br clear="right"/>
+</p>
