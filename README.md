@@ -38,13 +38,13 @@
 | Name  | Description | Site |
 | ------------- | ------------- |------------- |
 | kitty  | terminal  | [kitty](https://sw.kovidgoyal.net/kitty/) |
-| rofi  | menu  |
-| feh  | image view  |
-| nemo  | file manager  |
-| neovim  | cli editor  |
-| sublime  | text editor  |
-| lxaappearance  | for themes  |
-| zsh  | shell  |
+| rofi  | menu  | [rofi](https://github.com/davatorium/rofi) |
+| feh  | image view  | [feh](https://feh.finalrewind.org/) |
+| nemo  | file manager  | [nemo](https://github.com/linuxmint/nemo) |
+| neovim  | cli editor  | [neovim](https://neovim.io/) |
+| sublime  | text editor  | [sublime](https://www.sublimetext.com/) |
+| lxaappearance  | for themes  | [lxappearance](https://github.com/lxde/lxappearance) |
+| zsh  | shell  | [zsh](https://www.zsh.org/) |
 
 
 <h1>Configuration highlights</h1>
