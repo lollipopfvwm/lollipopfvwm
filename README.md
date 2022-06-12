@@ -60,9 +60,9 @@ So I migrated to shell script, which is native "of course" and more familiar to 
 </p>
 <p>
 In this way the settings were divided into 4 files.
-=> <strong>config</strong> - the main file that will be loaded by Fvwm
-=> <strong>settings.sh</strong> - this contains all the settings that can be changed by the user.
-=> <strong>config.sh</strong> - this file reads the settings.sh file and is read by config, it doesn't need to be modified by the user, but it can in some specific cases.
-And finally
-=> <strong>widgets.sh</strong> - contains the top bar, and may contain other widgets that need interaction with shell commands or scripts. This can also be changed by the user, as long as he knows what he is doing.
+<p>=> <strong>config</strong> - the main file that will be loaded by Fvwm</p>
+<p>=> <strong>settings.sh</strong> - this contains all the settings that can be changed by the user.</p>
+<p>=> <strong>config.sh</strong> - this file reads the settings.sh file and is read by config, it doesn't need to be modified by the user, but it can in some specific cases.
+And finally</p>
+<p>=> <strong>widgets.sh</strong> - contains the top bar, and may contain other widgets that need interaction with shell commands or scripts. This can also be changed by the user, as long as he knows what he is doing.</p>
 </p>
