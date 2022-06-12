@@ -49,3 +49,20 @@ This theme is also applied in other applications, such as the neovim text editor
 	<br clear="right"/>
 </p>
 <h1>Simplified setup</h1>
+<p>
+Fvwm, despite being an excellent window manager, extremely versatile and customizable, has a configuration file that is very complicated to understand, due to its "Different" form.
+</p>
+<p>
+Thinking about it, I thought about simplifying this, dividing the configurations, as many do, but I did this initially by writing the configurations in lua, but I saw that it was complicated, because lua is not native to linux, and it will be another dependency.
+</p>
+<p>
+So I migrated to shell script, which is native "of course" and more familiar to those who use linux on a daily basis.
+</p>
+<p>
+In this way the settings were divided into 4 files.
+=> <strong>config</strong> - the main file that will be loaded by Fvwm
+=> <strong>settings.sh</strong> - this contains all the settings that can be changed by the user.
+=> <strong>config.sh</strong> - this file reads the settings.sh file and is read by config, it doesn't need to be modified by the user, but it can in some specific cases.
+And finally
+=> <strong>widgets.sh</strong> - contains the top bar, and may contain other widgets that need interaction with shell commands or scripts. This can also be changed by the user, as long as he knows what he is doing.
+</p>
