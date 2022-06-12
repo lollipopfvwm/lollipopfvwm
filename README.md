@@ -34,19 +34,17 @@
 🡲	Wallpapers
 
 <h1>Used programs</h1>
-<table align="left">
-<tr align="center">
-<tr>
-	<li><strong>kitty </strong></li> 
-	<sub>Terminal</sub>
-</tr>
-</tr>
-</table>
 
-| First Header  | Second Header |
+| Name  | Description |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| kitty  | terminal  |
+| rofi  | menu  |
+| feh  | image view  |
+| nemo  | file manager  |
+| neovim  | cli editor  |
+| sublime  | text editor  |
+| lxaappearance  | forr themes  |
+
 
 <h1>Configuration highlights</h1>
 <p align="left"></p>
