@@ -35,16 +35,16 @@
 
 <h1>Used programs</h1>
 
-| Name  | Description | Site |
-| ------------- | ------------- |------------- |
-| kitty  | terminal  | [kitty](https://sw.kovidgoyal.net/kitty/) |
-| rofi  | menu  | [rofi](https://github.com/davatorium/rofi) |
-| feh  | image view  | [feh](https://feh.finalrewind.org/) |
-| nemo  | file manager  | [nemo](https://github.com/linuxmint/nemo) |
-| neovim  | cli editor  | [neovim](https://neovim.io/) |
-| sublime  | text editor  | [sublime](https://www.sublimetext.com/) |
-| lxaappearance  | for themes  | [lxappearance](https://github.com/lxde/lxappearance) |
-| zsh  | shell  | [zsh](https://www.zsh.org/) |
+| Name  | Description | Site | Install |
+| ------------- | ------------- |------------- | ------------- |
+| kitty  | terminal  | [kitty](https://sw.kovidgoyal.net/kitty/) | sudo pacman -S kitty |
+| rofi  | menu  | [rofi](https://github.com/davatorium/rofi) | sudo pacman -S rofi |
+| feh  | image view  | [feh](https://feh.finalrewind.org/) | sudo pacman -S feh |
+| nemo  | file manager  | [nemo](https://github.com/linuxmint/nemo) | sudo pacman -S nemo |
+| neovim  | cli editor  | [neovim](https://neovim.io/) | sudo pacman -S neovim |
+| sublime  | text editor  | [sublime](https://www.sublimetext.com/) | yay -S sublime-text-4 |
+| lxaappearance  | for themes  | [lxappearance](https://github.com/lxde/lxappearance) | sudo pacman -S lxappearance-gtk3 |
+| zsh  | shell  | [zsh](https://www.zsh.org/) | sudo pacman -S zsh |
 
 
 <h1>Configuration highlights</h1>
