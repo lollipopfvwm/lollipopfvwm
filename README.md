@@ -68,7 +68,7 @@ And finally</p>
 </p>
 <h2>A little about settings.sh</h2>
 <p align="center">
-	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/settings-apps-.png">
+	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/settings-apps-.png" align="right" width="500"/>
 	<p>
 	Note how simple the configuration is.
 	Just change the variables, always reading the comments of each block.
