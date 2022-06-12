@@ -35,9 +35,9 @@
 
 <h1>Used programs</h1>
 
-| Name  | Description |
-| ------------- | ------------- |
-| kitty  | terminal  |
+| Name  | Description | Site |
+| ------------- | ------------- |------------- |
+| kitty  | terminal  | [kitty](https://sw.kovidgoyal.net/kitty/) |
 | rofi  | menu  |
 | feh  | image view  |
 | nemo  | file manager  |
