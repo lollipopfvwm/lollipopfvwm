@@ -1,3 +1,4 @@
+<div align="justify">
 <p align="center">
 	<img src="https://github.com/lollipopfvwm/lollipopfvwm/blob/main/images/LolliPop.png"
 	align="right" width="300"/>
@@ -101,3 +102,5 @@ And finally</p>
 	</p>
 	<br clear="right"/>
 </p>
+</p>
+</div>
