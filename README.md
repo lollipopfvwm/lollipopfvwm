@@ -13,12 +13,12 @@
 </p>
 
 <h1>Dependencies</h1>
-<a>
+<li>
  🡲 <strong>xorg-xwd</strong>
-</a>
-<a>
+</li>
+<li>
  🡲 <strong>imagemagic</strong>
-</a>
+</li>
  	To generate thumbnails when minimizing
 
 <h1>Configuration highlights</h1>
