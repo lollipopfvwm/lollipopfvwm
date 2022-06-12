@@ -17,7 +17,7 @@
 <strong>xorg-xwd</strong>
 </li>
 <li>
-<strong>imagemagic</strong>
+<strong>imagemagick</strong>
 </li>
 🡲 	To generate thumbnails when minimizing
 <li>
@@ -32,6 +32,13 @@
 <strong>nitrogen</strong>
 </li>
 🡲	Wallpapers
+
+<h1>Used programs</h1>
+<table align="left">
+<tr align="center">
+	<li><strong>kitty </strong> Terminal</li>
+</tr>
+</table>
 
 <h1>Configuration highlights</h1>
 <p align="left"></p>
