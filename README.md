@@ -79,5 +79,11 @@ And finally</p>
 	<p>
 	This applies to all programs in this block.
 	</p>
+	<p>
+	~~~shell
+	#!/bin/bash
+	echo "oi"
+	~~~
+	</p>
 	<br clear="right"/>
 </p>
