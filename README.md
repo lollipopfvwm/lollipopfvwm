@@ -131,4 +131,10 @@ And finally</p>
 </p>
 
 <h1>Fixes and bugs   <img src="https://cdn-icons.flaticon.com/png/512/4380/premium/4380548.png?token=exp=1655153683~hmac=a527c89e5b6ba14cf96b9ba390b0673f" align="center" width="40"/></h1>
+<p>
+The shutdown control panel still doesn't have a cancel button, to exit the panel you have to restart the system with Super+Shift+r.
+</p>
+<p>
+Sometimes the keyboard shortcuts stop working, being necessary to click on an icon in the bar to return to normal, but this is a bug of Fvwm itself, which will be fixed in the future.
+</p>
 </div>
