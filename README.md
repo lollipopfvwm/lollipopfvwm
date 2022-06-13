@@ -25,7 +25,7 @@
 
 | Name  | Description | Site | Install |
 | ------------- | ------------- |------------- | ------------- |
-| kitty  | terminal  | [kitty](https://sw.kovidgoyal.net/kitty/) |
+| kitty  | terminal  | [kitty](https://sw.kovidgoyal.net/kitty/) | sudo pacman -S kitty |
 | rofi  | menu  | [rofi](https://github.com/davatorium/rofi) | sudo pacman -S rofi |
 | feh  | image view  | [feh](https://feh.finalrewind.org/) | sudo pacman -S feh |
 | nemo  | file manager  | [nemo](https://github.com/linuxmint/nemo) | sudo pacman -S nemo |
