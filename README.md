@@ -58,20 +58,22 @@ This theme is also applied in other applications, such as the neovim text editor
 	align="right" width="500"/>
 	<h1>Workspace</h1>
 	<p>
-	This customization has a very simple and useful workspace, containing a bar at the top, an underwater dock and a clock on the right.
+	This configuration brings a very clean and simple desktop.
 	</p>
 	<p>
-	The dock is a simple dock, like any other, it just launches pre-configured applications in the Fvwm configuration file, the watch too, does what it should do, "show the time".
+	It contains only a bar at the bottom, which can also be used in the upper part of the screen.
 	</p>
 	<p>
-	The big difference is the top bar, because it does things that no other bar in window managers does. In the center of the bar there is a text entry, which has <strong>3 utilities</strong>, open locations with the file manager, execute command in the terminal and do internet searches.	
+	It consists of 3 sectors, left, central and right.
 	</p>
 	<p>
-	For example, type <strong>Desktop</strong> or <strong>.config</strong> or <strong>/etx/xdg</strong> and click on the folder icon, then the file manager will open in the folder indicated in the text input. From terminal commands and click on the terminal icon, for example <strong>sudo pacman -Syu</strong>, the terminal will open and perform the system update, or type <strong>nvim .fvwm/config</strong> then the terminal will open the text editor in the indicated file. For internet searches, just type the text and press Enter or click on the globe.	
+	On the right side we have the applications that are open
 	</p>
 	<p>
-	And finally the menu button that opens the custom rofi menu for this WM.
-	And the button to change from light to dark.
+	In the center we have the menu button, and an application launcher, which can be modified in the settings in ~/.fvwm/config
+	</p>
+	<p>
+	On the right we have the system tray, date and time, a button to turn off and other operations and a button to show the desktop, which will minimize everything that is open.	
 	</p>
 	<br clear="right"/>
 </p>
