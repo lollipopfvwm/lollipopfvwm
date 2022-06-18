@@ -5,40 +5,34 @@
 #┃╭━━┫╰╯┃╰╯╰╯┃╰╯┣╮╰╮┃
 #┃┃  ╰╮╭┻╮╭╮╭┫┃┃┃╰━╯┃
 #╰╯   ╰╯ ╰╯╰╯╰┻┻┻━━━╯
-# Modificado por : Diego Cesare <diegocesare300491@gmail.com>
-# Primeira modificação em : dom 28 nov 2021
+# Modified by : Diego Cesare <diegocesare300491@gmail.com>
+# dom 28 nov 2021
 #===========================================================
 
 
 # Ignore Numlock and other modifiers for bindings
-# See http://fvwm.org/documentation/faq/#why-do-numlock-capslock-and-scrolllock-interfere-with-clicktofocus-andor-my-mouse-bindings
 IgnoreModifiers L25
 
 ############################################################
 # █▀▄▀█ █▀█ █▀▄ █░█ █░░ █▀▀ █▀
 # █░▀░█ █▄█ █▄▀ █▄█ █▄▄ ██▄ ▄█
 ############################################################
-# A maioria das configurações estao neste arquivo
 PipeRead 'sh ~/.fvwm/config.sh'
-# Diretorio para as miniaturas
-# Widgets
-PipeRead 'sh ~/.fvwm/widgets.sh'
-SetEnv cache $[HOME]/.fvwm/cache/
-# Diretorio para os scripts
-SetEnv scripts $[HOME]/.fvwm/scripts
-# Diretorio com os icones, consulte lua/window.lua para ver as opçoes
-SetEnv icons $[HOME]/.fvwm/icons/titlebar/$[infostore.Buttonstyle]
-SetEnv dock $[HOME]/.fvwm/icons/dock
-SetEnv power $[HOME]/.fvwm/icons/power
 
-##PipeRead 'sh ~/.fvwm/scripts/Settings.sh'
+SetEnv cache $[HOME]/.fvwm/cache/
+
+SetEnv scripts $[HOME]/.fvwm/scripts
+
+SetEnv icons $[HOME]/.fvwm/icons/titlebar/$[infostore.Buttonstyle]
+
+SetEnv dock $[HOME]/.fvwm/icons/dock
+
+SetEnv power $[HOME]/.fvwm/icons/power
 
 ############################################################
 # ▄▀█ █░█ ▀█▀ █▀█ █▀ ▀█▀ ▄▀█ █▀█ ▀█▀
 # █▀█ █▄█ ░█░ █▄█ ▄█ ░█░ █▀█ █▀▄ ░█░
 ############################################################
-
-# Programas e funções que irao iniciar a cada vez que o Fvwm for reestartado
 DestroyFunc StartFunction
 AddToFunc   StartFunction
 + I Module FvwmAuto FvwmAutohide -menter enter_handler
@@ -50,12 +44,8 @@ AddToFunc   StartFunction
 
 + I FvwmAnimate
 
-+ I Module FvwmButtons dock
++ I Module FvwmButtons FvwmTaskBar
 
-+ I Module FvwmForm Search
-+ I Module FvwmScript $[scripts]/DateTime
-
-# Programas e funções que irao iniciar junto com o sistema uma unica vez
 DestroyFunc InitFunction
 AddToFunc InitFunction
 + I Module FvwmAuto 300
@@ -113,13 +103,20 @@ SetAnimation  10  -.01 0 .01 .03 .08 .18 .3 .45 .6 .75 .85 .90 .94 .97 .99 1.0
 Emulate Mwm
 HideGeometryWindow never
 
-# Clock Style
-#Style "FvwmScript" !Title, !Borders, !Handles, Sticky, NeverFocus, \
-#!FixedPosition, FixedSize, Iconifiable, StaysOnBottom
+Style "dock" !Title, !Borders, !Handles, Sticky, StaysOnTop, NeverFocus
 
 Style DateTime !Title, !Handles, !Borders, WindowListSkip, StickyAcrossDesks, NeverFocus
-Style "dock" !Title, !Handles, !Borders, WindowListSkip, NeverFocus
-Style "FvwmForm" !Title, !Handles, !Borders, WindowListSki, NeverFocus, Sticky
+
+Style "FvwmTaskBar" !Title, !Handles, !Borders, WindowListSkip, NeverFocus, Sticky, !Iconifiable, !Closable
+
+Style "FvwmForm" !Title, !Handles, !Borders, WindowListSki, NeverFocus, Sticky, !Iconifiable, !Closable
+
+Style ulauncher !Title, !Handles, !Borders, WindowListSkip, StickyAcrossDesks, NeverFocus
+
+Style xfce4-panel !Title, !Handles, !Borders, WindowListSkip, StickyAcrossDesks, NeverFocus
+
+Style Wrapper-2.0 !Title, !Handles, !Borders, WindowListSkip, StickyAcrossDesks, NeverFocus
+
 
 # Menus
 MenuStyle * MenuColorset $[infostore.Base]
@@ -256,7 +253,7 @@ AddToFunc MoveToCurrent
 + I ThisWindow MoveToDesk
 
 # Function
-AddToFunc FocusRaiseAndStuff
+AddToFunc FocusRaiseAndStuff 
 + I Iconify on
 + I Focus
 + I Raise
@@ -273,14 +270,14 @@ AddToFunc DeThumbnail
 + I PipeRead 'bash $[scripts]/dethumb "$[w.id]" "$[cache]"'
 *FvwmEvent: deiconify DeThumbnail
 
-Style * IconBox 1100x0+360+65, IconGrid 5 5, Colorset $[infostore.Transparent], \
-IconFill top left, !IconTitle, IconBackgroundRelief 2
+Style * IconBox 100x1100+5+5, IconGrid 0 0, Colorset $[infostore.Transparent], \
+IconFill top left, !IconTitle, IconBackgroundRelief 0
 
 Key z A 4 Thumbnail
 
-# Esta função pode auto recolher um programa
-#   => Janelas
-#   => Barras
+# Function to auto hide elements
+#   => Windows
+#   => Bars
 #   => Widgets
 
 DestroyFunc autohide
@@ -297,11 +294,11 @@ AddToFunc autohide_hide
 DestroyFunc enter_handler
 AddToFunc enter_handler
 + I autohide "dock" 2500 S
-+ I autohide "FvwmTaskBar" 2500 W
+#+ I autohide "DateTime" 2500 W
 #            ^           ^   ^
-#            |           |   |___  Direção
-#            |           |_______  Tempo (milisegundos)
-#            |___________________  Nome do programa
+#            |           |   |___  Direction
+#            |           |_______  Time (milisegundos)
+#            |___________________  Name
 
 # EdgeScroll will move the view port between the Pages when the mouse
 # moves to the edge of the screen. This set the amount of distance to
@@ -393,10 +390,6 @@ AddButtonStyle $[infostore.button3] \
 #  ActiveDown (Pixmap $[icons]/05.svg$[infostore.ButtonSize] -- Flat) \
 #  Inactive (Pixmap $[icons]/05.svg$[infostore.ButtonSize] -- Flat) \
 
-ButtonStyle 1 - Clear MWMDecorMenu
-ButtonStyle 2 - Clear MWMDecorMax
-ButtonStyle 4 - Clear MWMDecorMin
-
 ###################################################
 # █▀▄▀█ █▀█ █░█ █▀ █▀▀
 # █░▀░█ █▄█ █▄█ ▄█ ██▄
@@ -425,71 +418,115 @@ Mouse 3 R A Exec exec jgmenu_run
 # ▀▄▀▄▀ █ █▄▀ █▄█ ██▄ ░█░ ▄█
 ###################################################
 
-*power: BoxSize smart
-*power: Font "xft:Sans:Bold:size=40:antialias=True"
-*power: Colorset $[infostore.Transparent]
-*power: ActiveColorset 1
-*power: Columns 400
-*power: Frame 10
-*power: Geometry 1600x900+0+0
-*power: Rows 0
-*power: Padding 0 0
+# TaskBar
+# Schedule the time to update every 10 seconds
+Schedule Periodic 10000 PipeRead 'echo "SendToModule \
+FvwmButtons ChangeButton TaskTime Title \"`date +%R`\""'
 
-*power(500x500+40+40, Container(Rows 200 Columns 400)
-*power(70x180+0+0, Title PowerOff, Colorset 2, Icon $[power]/power.svg:150x150-0-0, ActiveIcon $[power]/power.svg:150x150-0-0,\
-Action(Mouse1) Exec shutdown now
-*power(70x180+100+0, Title Reboot, Colorset 3, Icon $[power]/reboot.svg:150x150-0-0, ActiveIcon $[power]/reboot.svg:150x150-0-0,\
-Action(Mouse1) Exec reboot
-*power(70x180+200+0, Title LogOut, Colorset 4, Icon $[power]/logout.svg:150x150-0-0, ActiveIcon $[power]/logout.svg:150x150-0-0,\
-Action(Mouse1) Exec pkill -u -9 $USER
-*power(70x180+300+0, Title Lock, Colorset 5, Icon $[power]/lock.svg:150x150-0-0, ActiveIcon $[power]/lock.svg:150x150-0-0,\
-Action(Mouse1) Exec i3-lock)
+# Schedule the date to update every 10 seconds
+Schedule Periodic 10000 PipeRead 'echo "SendToModule \
+FvwmButtons ChangeButton TaskDate Title \"`date +%d/%m/%y`\""'
 
-Style power !Title, !Borders, !FPEnterToFocus, !NeverFocus, Closable, Sticky, Handles, !Iconifiable, StaysOnTop
-
-DestroyModuleConfig web: *
-*webWarpPointer
-*webGeometry 120x50
-*webColorset $[infostore.Transparent]
-*webInputFont    "xft:monofur for Powerline:Bold:size=10:antialias=True"
-*webButtonFont   "xft:monofur for Powerline:Bold:size=12:antialias=True"
-*webButton       restart ""
-*webCommand      Exec exec \$[infostore.term] -e $(Search)
-*webButton       restart ""        ^M
-*webText         " "
-*webInput        Search  40   ""
-*webText         " "
-*webCommand Exec exec xdg-open http://www.google.co.uk/search?q="$(Search)"
+DestroyModuleConfig FvwmTaskBar: *
+*FvwmTaskBar: Geometry 1580x$[infostore.BarSize]$[infostore.BarPosition]
+*FvwmTaskBar: Colorset $[infostore.Widget]
+*FvwmTaskBar: Frame 0
+*FvwmTaskBar: Font "xft:Arial:Bold:size=10:antialias=True"
+*FvwmTaskBar: Rows 1
+*FvwmTaskBar: Columns 1200
 
 
-*dock: BoxSize fixed
-*dock: Colorset $[infostore.Widget]
-*dock: ActiveColorset 5
-*dock: Columns 412
-*dock: Frame 0
-*dock: Geometry 550x70+510+826
-*dock: Rows 0
-*dock: Padding 0 0
+*FvwmTaskBar: (590x1, Left, Swallow TaskBarIcons 'Module FvwmIconMan \
+               TaskBarIcons')
 
-*dock(60x20+0+0, Icon $[dock]/editor.svg:50x50-0-0, ActiveIcon $[dock]/editor.svg:45x45-0-0,\
-Action(Mouse1) Exec subl, Action(Mouse3) Next (subl) Iconify )
+*FvwmTaskBar(50x1)
 
-*dock(60x20+60+0, Icon $[dock]/facebook.svg:50x50-0-0, ActiveIcon $[dock]/facebook.svg:45x45-0-0, \
+*FvwmTaskBar($[infostore.IconPadding]x1, \
+Icon $[dock]/menu.svg:$[infostore.BarIconSize]x$[infostore.BarIconSize]-0-0, \
+ActiveIcon $[dock]/menu.svg:$[infostore.BarIconSizeHover]x$[infostore.BarIconSizeHover]-0-0,\
+Action(Mouse1) Exec rofi -show drun)
+
+*FvwmTaskBar($[infostore.IconPadding]x1,\
+Icon $[dock]/chrome.svg:$[infostore.BarIconSize]x$[infostore.BarIconSize]-0-0, \
+ActiveIcon $[dock]/chrome.svg:$[infostore.BarIconSizeHover]x$[infostore.BarIconSizeHover]-0-0,\
+Action(Mouse1) Exec google-chrome-stable, Action(Mouse3) Next (google-chrome-stable) Iconify)
+
+*FvwmTaskBar($[infostore.IconPadding]x1,\
+Icon $[dock]/editor.svg:$[infostore.BarIconSize]x$[infostore.BarIconSize]-0-0, \
+ActiveIcon $[dock]/editor.svg:$[infostore.BarIconSizeHover]x$[infostore.BarIconSizeHover]-0-0,\
+Action(Mouse1) Exec subl, Action(Mouse3) Next (subl) Iconify)
+
+*FvwmTaskBar($[infostore.IconPadding]x1, \
+Icon $[dock]/facebook.svg:$[infostore.BarIconSize]x$[infostore.BarIconSize]-0-0, \
+ActiveIcon $[dock]/facebook.svg:$[infostore.BarIconSizeHover]x$[infostore.BarIconSizeHover]-0-0, \
 Action Exec xdg-open https://facebook.com, Action(Mouse3) Next (google-chrome) Iconify )
 
-*dock(60x20+120+0, Icon $[dock]/spotify.svg:50x50-0-0, ActiveIcon $[dock]/spotify.svg:45x45-0-0, \
+*FvwmTaskBar($[infostore.IconPadding]x1, \
+Icon $[dock]/spotify.svg:$[infostore.BarIconSize]x$[infostore.BarIconSize]-0-0, \
+ActiveIcon $[dock]/spotify.svg:$[infostore.BarIconSizeHover]x$[infostore.BarIconSizeHover]-0-0, \
 Action(Mouse1) Exec spotify, Action(Mouse3) Next (spotify) Iconify)
 
-*dock(60x20+180+0, Icon $[dock]/telegram.svg:50x50-0-0, ActiveIcon $[dock]/telegram.svg:45x45-0-0, \
+*FvwmTaskBar($[infostore.IconPadding]x1, \
+Icon $[dock]/telegram.svg:$[infostore.BarIconSize]x$[infostore.BarIconSize]-0-0, \
+ActiveIcon $[dock]/telegram.svg:$[infostore.BarIconSizeHover]x$[infostore.BarIconSizeHover]-0-0, \
 Action(Mouse1) Exec telegram-desktop, Action(Mouse3) Next (telegram-desktop) Iconify)
 
-*dock(60x20+240+0, Icon $[dock]/youtube.svg:50x50-0-0, ActiveIcon $[dock]/youtube.svg:45x45-0-0, \
+*FvwmTaskBar($[infostore.IconPadding]x1, \
+Icon $[dock]/youtube.svg:$[infostore.BarIconSize]x$[infostore.BarIconSize]-0-0, \
+ActiveIcon $[dock]/youtube.svg:$[infostore.BarIconSizeHover]x$[infostore.BarIconSizeHover]-0-0, \
 Action(Mouse1) Exec xdg-open https://youtube.com, Action(Mouse3) Next (google-chrome) Iconify)
 
-*dock(60x20+300+0, Icon $[dock]/themes.svg:50x50-0-0, ActiveIcon $[dock]/themes.svg:45x45-0-0, \
+*FvwmTaskBar($[infostore.IconPadding]x1, \
+Icon $[dock]/themes.svg:$[infostore.BarIconSize]x$[infostore.BarIconSize]-0-0, \
+ActiveIcon $[dock]/themes.svg:$[infostore.BarIconSizeHover]x$[infostore.BarIconSizeHover]-0-0, \
 Action(Mouse1) Exec lxappearance, Action(Mouse3) Next (lxappearance) Iconify)
 
-*dock(60x20+360+0, Icon $[dock]/wallpaper.svg:50x50-0-0, ActiveIcon $[dock]/wallpaper.svg:45x45-0-0, \
+*FvwmTaskBar($[infostore.IconPadding]x1, \
+Icon $[dock]/wallpaper.svg:$[infostore.BarIconSize]x$[infostore.BarIconSize]-0-0, \
+ActiveIcon $[dock]/wallpaper.svg:$[infostore.BarIconSizeHover]x$[infostore.BarIconSizeHover]-0-0, \
 Action(Mouse1) Exec nitrogen, Action(Mouse3) Next (nitrogen) Iconify)
 
-Style "dock" !Title, !Borders, !Handles, Sticky, StaysOnTop, NeverFocus
+*FvwmTaskBar(310x1)
+
+*FvwmTaskBar: (120x1, Swallow(NoClose, UseOld) stalonetray \
+               'exec stalonetray --config ~/.fvwm/scripts/stalonetrayrc ', Frame 0)
+
+*FvwmTaskBar: (50x1)
+
+*FvwmTaskBar: (100x1, id "TaskDate", , ColorSet $[infostore.Base], Title "Date")
+*FvwmTaskBar: (2x1)
+*FvwmTaskBar: (60x1, id "TaskTime", , ColorSet $[infostore.Base] Title "Time")
+*FvwmTaskBar: (2x1)
+*FvwmTaskBar(35x1, Icon $[dock]/power.svg:15x15-0-0, Colorset 4, ActiveIcon $[dock]/power.svg:20x20-0-0, \
+Action(Mouse1) Exec sh ~/.config/rofi/bin/powermenu)
+*FvwmTaskBar: (2x1)
+*FvwmTaskBar(12x1, Colorset 9, Action(Mouse1) All Thumbnail)
+
+DestroyModuleConfig TaskBarIcons: *
+*TaskBarIcons: IconName TaskBarIcons
+*TaskBarIcons: UseWinList true
+*TaskBarIcons: Resolution global
+*TaskBarIcons: Tips needed
+*TaskBarIcons: Font "xft:Arial:Bold:size=8:antialias=True"
+
+# Manager Size
+*TaskBarIcons: ButtonGeometry 120x50
+*TaskBarIcons: MaxButtonWidth 120
+*TaskBarIcons: ManagerGeometry 1x1
+
+# Button Styles
+*TaskBarIcons: DrawIcons always
+*TaskBarIcons: ReliefThickness 2
+*TaskBarIcons: Format "%c"
+*TaskBarIcons: IconButton up
+*TaskBarIcons: IconAndSelectButton up
+*TaskBarIcons: SelectButton up
+*TaskBarIcons: ColorSet $[infostore.Widget]
+*TaskBarIcons: PlainColorset $[infostore.Base]
+*TaskBarIcons: FocusColorset 6
+*TaskBarIcons: FocusAndSelectCoSorset 3
+*TaskBarIcons: SelectColorset 8
+*TaskBarIcons: IconAndSelectColorset 7
+
+# Button Actions
+*TaskBarIcons: Action Mouse 1 A sendcommand Thumbnail

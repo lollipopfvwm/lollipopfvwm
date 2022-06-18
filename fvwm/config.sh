@@ -55,6 +55,7 @@ Key s A 4 Exec exec \$[infostore.music]
 Key v A 4 Exec exec \$[infostore.editor]
 Key t A 4 Exec exec \$[infostore.chat]
 Key m A 4 Exec exec \$[infostore.menu]
+Key u A 4 Exec exec ulauncher
 
 EOF
 
@@ -119,6 +120,7 @@ Key Down A 4 TileBottomRight
 
 EOF
 
+# Volume
 cat << EOF
 Key XF86AudioRaiseVolume A A Exec amixer set Master $Up
 Key XF86AudioLowerVolume A A Exec amixer set Master $Down
@@ -126,7 +128,7 @@ Key XF86AudioMute A A Exec amixer set Master toggle
 
 EOF
 
-# Configuraçoes de cor
+# Colors
 cat << EOF
 ColorSet 0 fg $lf, bg $db, sh $db, hi $db, Plain, NoShape
 ColorSet 1 fg $db, bg $lb, sh $lb, hi $lb, Plain, NoShape
@@ -136,20 +138,24 @@ ColorSet 4 fg $lf, bg $be, sh $be, hi $be, Plain, NoShape
 ColorSet 5 fg $db, bg $yw, sh $yw, hi $yw, Plain, NoShape
 ColorSet 6 fg $lb, bg $pr, sh $pr, hi $pr, Plain, NoShape
 ColorSet 7 fg $db, bg $cy, sh $cy, hi $cy, Plain, NoShape
+ColorSet 8 fg $lf, bg $mg, sh $mg, hi $mg, Plain, NoShape
 
-ColorSet 8 HGradient $gradient
+
+ColorSet 9 HGradient $gradient
 
 ColorSet 10 fg $lf, bg $rtd, sh $rtd, hi $rtd, Plain, NoShape
-ColorSet 11 fg $df, bg $rtl, sh $rtl, hi $rtl, Plain, NoShape
+ColorSet 11 fg $lf, bg $rtl, sh $rtl, hi $rtl, Plain, NoShape
 
 Colorset 12 Transparent buffer,$alpha , RootTransparent buffer
+Colorset 13 Transparent buffer,$alpha1 , RootTransparent buffer
+
 
 EOF
 
-# Cores para os widgets
+# Colors of widgets
 cat << EOF
-ColorSet 13 fg $lf, bg $wd, sh $wd, hi $wd, Plain, NoShape
-ColorSet 14 fg $df, bg $wl, sh $wl, hi $wl, Plain, NoShape
+ColorSet 14 fg $wd, bg $wd, sh $wd, hi $wd, Plain, NoShape
+ColorSet 15 fg $wl, bg $wl, sh $wl, hi $wl, Plain, NoShape
 
 EOF
 
@@ -163,7 +169,7 @@ InfoStoreAdd BorderActive "0"
 InfoStoreAdd BorderInactive "0"
 InfoStoreAdd Highlight "5"
 InfoStoreAdd Transparent "12"
-InfoStoreAdd Widget "13"
+InfoStoreAdd Widget "14"
 
 EOF
 elif [[ $Theme = Light ]]; then
@@ -175,38 +181,38 @@ InfoStoreAdd BorderActive "1"
 InfoStoreAdd BorderInactive "1"
 InfoStoreAdd Highlight "4"
 InfoStoreAdd Transparent "12"
-InfoStoreAdd Widget "14"
+InfoStoreAdd Widget "15"
 
 EOF
 
 elif [[ $Theme = Colors ]]; then
 cat << EOF
 InfoStoreAdd Base "0"
-InfoStoreAdd Active "2"
-InfoStoreAdd Inactive "3"
+InfoStoreAdd Active "8"
+InfoStoreAdd Inactive "6"
 InfoStoreAdd BorderActive "0"
 InfoStoreAdd BorderInactive "0"
 InfoStoreAdd Highlight "5"
 InfoStoreAdd Transparent "12"
-InfoStoreAdd Widget "13"
+InfoStoreAdd Widget "14"
 
 EOF
 
-elif [[ $Theme = Gradiente ]]; then
+elif [[ $Theme = Gradient ]]; then
 cat << EOF
 InfoStoreAdd Base "0"
-InfoStoreAdd Active "8"
-InfoStoreAdd Inactive "8"
+InfoStoreAdd Active "9"
+InfoStoreAdd Inactive "9"
 InfoStoreAdd BorderActive "0"
 InfoStoreAdd BorderInactive "0"
 InfoStoreAdd Highlight "5"
 InfoStoreAdd Transparent "12"
-InfoStoreAdd Widget "13"
+InfoStoreAdd Widget "14"
 
 EOF
 fi
 
-# Usar titulo nas janelas? --
+# Window Title
 if [[ $Title = 'yes' ]]; then
 	echo -e "Style * !Icon, Title\n"
 elif [[ $Title = 'no' ]]; then
@@ -215,12 +221,12 @@ else
 	echo -e "Style * !Icon, Title\n"
 fi
 
-# Janelas
-# Tema de icones das janelas
+# Windows
+# Window icon theme
 echo -e "InfoStoreAdd Buttonstyle $IconStyle\n"
 echo -e "InfoStoreAdd ButtonSize :${ButtonSize}x${ButtonSize}-0-0\n"
 
-# Posição dos boroes nas barras de titulo
+# Title bar position
 if [[ $ButtonsOrientation == Left ]]; then
 	B1=1
 	B2=3
@@ -240,7 +246,7 @@ elif [[ $ButtonsOrientation == Right ]]; then
 fi
 
 
-# Barra de titulos, bordas e fontes
+# Title bar, borders and fonts
 cat << EOF
 
 InfoStoreAdd TitleSize $TitleSize
@@ -251,9 +257,24 @@ InfoStoreAdd TitlePosition TitleAt${TitlePosition}
 
 EOF
 
-# Desktops e monitores
+# Desktops and monitors
 cat << EOF
 DesktopConfiguration $DeskType
 EWMHBAseStruts screen $M1 $LM1 $RM1 $TM1 $BM1
 EWMHBAseStruts screen $M2 $LM2 $RM2 $TM2 $BM2
+EOF
+
+# Bar
+
+if [[ $BarPosition == Bottom ]]; then
+	echo "InfoStoreAdd BarPosition +10+842"
+elif [[ $BarPosition == Top ]]; then
+	echo "InfoStoreAdd BarPosition +10+10"
+fi
+
+cat << EOF
+InfoStoreAdd BarSize $BarHeight
+InfoStoreAdd BarIconSize $BarIconSize
+InfoStoreAdd BarIconSizeHover $BarIconSizeHover
+InfoStoreAdd IconPadding $IconPadding
 EOF
