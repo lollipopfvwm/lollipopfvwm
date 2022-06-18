@@ -427,6 +427,10 @@ FvwmButtons ChangeButton TaskTime Title \"`date +%R`\""'
 Schedule Periodic 10000 PipeRead 'echo "SendToModule \
 FvwmButtons ChangeButton TaskDate Title \"`date +%d/%m/%y`\""'
 
+# Schedule the date to update every 10 seconds
+Schedule Periodic 10000 PipeRead 'echo "SendToModule \
+FvwmButtons ChangeButton Mode Title \"`sh ~/.fvwm/scripts/mode.sh -i`\""'
+
 DestroyModuleConfig FvwmTaskBar: *
 *FvwmTaskBar: Geometry 1580x$[infostore.BarSize]$[infostore.BarPosition]
 *FvwmTaskBar: Colorset $[infostore.Widget]
@@ -435,7 +439,6 @@ DestroyModuleConfig FvwmTaskBar: *
 *FvwmTaskBar: Rows 1
 *FvwmTaskBar: Columns 1200
 
-
 *FvwmTaskBar: (590x1, Left, Swallow TaskBarIcons 'Module FvwmIconMan \
                TaskBarIcons')
 
@@ -443,6 +446,7 @@ DestroyModuleConfig FvwmTaskBar: *
 
 *FvwmTaskBar($[infostore.IconPadding]x1, \
 Icon $[dock]/menu.svg:$[infostore.BarIconSize]x$[infostore.BarIconSize]-0-0, \
+Colorset 4, \
 ActiveIcon $[dock]/menu.svg:$[infostore.BarIconSizeHover]x$[infostore.BarIconSizeHover]-0-0,\
 Action(Mouse1) Exec rofi -show drun)
 
@@ -493,10 +497,13 @@ Action(Mouse1) Exec nitrogen, Action(Mouse3) Next (nitrogen) Iconify)
 
 *FvwmTaskBar: (50x1)
 
-*FvwmTaskBar: (100x1, id "TaskDate", , ColorSet $[infostore.Base], Title "Date")
+*FvwmTaskBar: (30x1, id "Mode", ColorSet 4, Action(Mouse1) exec sh ~/.fvwm/scripts/mode.sh -m; FvwmCommand Restart)
+
+*FvwmTaskBar: (90x1, id "TaskDate", , ColorSet $[infostore.Base], Title "Date")
 *FvwmTaskBar: (2x1)
 *FvwmTaskBar: (60x1, id "TaskTime", , ColorSet $[infostore.Base] Title "Time")
 *FvwmTaskBar: (2x1)
+
 *FvwmTaskBar(35x1, Icon $[dock]/power.svg:15x15-0-0, Colorset 4, ActiveIcon $[dock]/power.svg:20x20-0-0, \
 Action(Mouse1) Exec sh ~/.config/rofi/bin/powermenu)
 *FvwmTaskBar: (2x1)
@@ -510,13 +517,13 @@ DestroyModuleConfig TaskBarIcons: *
 *TaskBarIcons: Font "xft:Arial:Bold:size=8:antialias=True"
 
 # Manager Size
-*TaskBarIcons: ButtonGeometry 120x50
+*TaskBarIcons: ButtonGeometry 160x50
 *TaskBarIcons: MaxButtonWidth 120
 *TaskBarIcons: ManagerGeometry 1x1
 
 # Button Styles
 *TaskBarIcons: DrawIcons always
-*TaskBarIcons: ReliefThickness 2
+*TaskBarIcons: ReliefThickness 0
 *TaskBarIcons: Format "%c"
 *TaskBarIcons: IconButton up
 *TaskBarIcons: IconAndSelectButton up
