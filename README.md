@@ -19,6 +19,7 @@
 | xorg-xwd | thumbnails | sudo pacman -S xorg-xwd |
 | imagemagick | thumbnails | sudo pacman -S imagemagick |
 | picom | rounded edges and blur | yay - S picom-ibhagwan-git |
+| stalonetray | system tray | sudo pacman -S stalonetray |
 
 
 <h1>Used programs</h1>
